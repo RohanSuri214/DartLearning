@@ -1,0 +1,24 @@
+void main() {
+  
+  /*
+   * Type of data can't change but the value can change
+   */
+  String name = "Mario";
+  
+  print (name);
+  
+  const int age = 25;
+  print(age);
+  
+  bool isOpen = true;
+  print(isOpen);
+  
+  double average = 5;
+  average = 7.5;
+  print(average);
+  
+  //Null safety 
+  int? points; // allow it to be null
+  
+  print(points);
+}
