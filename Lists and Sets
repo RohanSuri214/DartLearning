@@ -1,0 +1,45 @@
+void main() 
+{
+  /*
+   *     Lists
+   */
+  //Lists are like arrays just like python 
+  var scores = [1,2,3,4,5, 'Mario'];
+  
+  //Restricts to only the data type mentioned
+  List<int> scores1 = [1,2,3,4,5];
+  
+  //Can change the value by directly indexing 
+  scores[1] = "Good";
+  
+  // 0 indexing
+  print(scores[1]); 
+  
+  scores.add(100);
+  print(scores);
+  
+  //if there are multiple 5's it only removes the first instance of it
+  scores.remove(5);
+  print(scores);
+  
+  scores.removeLast();
+  
+  print(scores.length);
+  
+  scores.shuffle(); // changes the order randomly
+  print(scores);
+
+  print(scores.indexOf(99));
+  
+  /*
+   * Sets are not ordered and can't hold duplicates
+   */
+  Set <String> names = {'mario', 'luigi', 'dk'};
+  names.add("bowser");
+  names.add("luigi");
+  names.remove('mario');
+  
+  
+  print(names.length);
+  print(names);
+}
