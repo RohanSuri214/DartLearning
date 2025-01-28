@@ -1,0 +1,26 @@
+void main() {
+  
+  final greeting = greet("Rohan", 25); // order matters 
+  print(greeting);
+  
+  // Named Parameters order doesn't matter
+  final greeting2 = greet2(name: "Rohan", age: 25);
+  print(greeting2);
+  
+  final greeting3 = greet2 (age: 25, name: "Rohan");
+  print(greeting3);
+  
+  final greeting4 = greet2 (age: 25);
+  print(greeting4);
+}
+
+String greet(String name, int age)
+{
+  return "Hi! my name is $name and I am $age";
+}
+
+// To use named parameters
+String greet2({String? name, required int age})
+{
+  return "Hi! my name is $name and I am $age";
+}
