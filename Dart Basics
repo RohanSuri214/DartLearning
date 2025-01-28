@@ -1,0 +1,25 @@
+Dart Basics
+
+void main() {
+  // Can't change the data type once delcared
+  var name = 'Mario';
+  print(name);
+  /* 
+   * can only be declared once, variable becomes runtime constant, used when u don't know the value      like loops return statements 
+   */
+  final age = 25;
+  const isOpen =
+      true; //variable becomes compile time constant, used when u know the value
+  print(age);
+  print(isOpen);
+
+  print(age + 10);
+  print(age - 10);
+  print(age * 10);
+  print(age / 5);
+  print(age % 10);
+
+  print("my name is " + name);
+  print("my name is $name and my age is $age"); //better method
+  
+}
