@@ -1,0 +1,32 @@
+void main() {
+  
+  //Control Flow
+  List<int> scores = [50,75,20,99,100,30];
+  
+  /*
+  for(int i = 0; i < 5; i++) 
+  {
+    print("the current value of i is $i");
+  }
+  */
+  
+  /*
+  for(int score in scores) 
+  {
+    if(score > 70)
+    {
+      print("Pass with a score of $score");
+    }
+    else
+    {
+      print("$score not high enough to pass");
+    }
+  }
+  */
+  
+  //where method is to filter out and give you those results
+  for(int score in scores.where((s) => s > 50))
+  {
+    print("The score is $score");
+  }
+}
