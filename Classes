@@ -1,0 +1,35 @@
+void main() 
+{
+  // title, price, format() -> string
+  var noodles = MenuItem("veg noodle", 9.99);
+  var pizza = Pizza(['bell peppers', 'chicken'], "veg volcano", 15.99);
+  
+  print(noodles.format());
+  print(pizza.format());
+  
+  /*
+  print(noodles.title);
+  print(noodles.price);
+  print(pizza.price);
+  print(pizza.title);
+  */
+}
+
+
+class MenuItem {
+  String title;
+  double price;
+  
+  MenuItem(this.title,this.price);
+  
+  String format()
+  {
+    return "$title --> $price";
+  }
+}
+
+//for extra properties 
+class Pizza extends MenuItem { 
+  List<String> toppings;
+  Pizza(this.toppings, super.title, super.prize);
+}
