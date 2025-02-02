@@ -1,0 +1,59 @@
+void main() 
+{
+  // title, price, format() -> string
+  var noodles = MenuItem("veg noodle", 9.99);
+  var pizza = Pizza(['bell peppers', 'chicken'], "veg volcano", 15.99);
+  
+  print(noodles);
+  print(pizza);
+  
+  /*
+  print(noodles.title);
+  print(noodles.price);
+  print(pizza.price);
+  print(pizza.title);
+  */
+}
+
+
+class MenuItem {
+  String title;
+  double price;
+  
+  MenuItem(this.title,this.price);
+  
+  String format()
+  {
+    return "$title --> $price";
+  }
+  
+  @override
+  String toString()
+  {
+    return format();
+  }
+}
+
+//for extra properties 
+class Pizza extends MenuItem { 
+  List<String> toppings;
+  Pizza(this.toppings, super.title, super.prize);
+  
+  //method overriding
+  String format(){
+     
+    var formattedToppings = "Contains: ";
+    for(final t in toppings)
+    {
+      
+      formattedToppings = '$formattedToppings $t';
+    }
+    return "$title -> $price \n$formattedToppings";
+  }
+  
+  @override
+  String toString()
+  {
+    return 'Pizza: $title, $price, $toppings';
+  }
+}
