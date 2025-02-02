@@ -1,0 +1,84 @@
+void main() 
+{
+  // title, price, format() -> string
+  var noodles = MenuItem("veg noodle", 9.99);
+  var pizza = Pizza(['bell peppers', 'chicken'], "veg volcano", 15.99);
+  var roast = MenuItem('veggie roast dinner', 12.49);
+  var biryani = MenuItem('Chicken Dum Biryani', 15.00);
+  
+  print("$noodles, $pizza, $roast, $biryani");
+
+  var foods = Collection <MenuItem> (
+  'Menu Items',
+  [noodles, pizza, roast, biryani]
+  );
+  
+  var random = foods.randomItem();
+  print(random);
+    
+  /*
+  print(noodles.title);
+  print(noodles.price);
+  print(pizza.price);
+  print(pizza.title);
+  */
+}
+
+
+class MenuItem {
+  String title;
+  double price;
+  
+  MenuItem(this.title,this.price);
+  
+  String format()
+  {
+    return "$title --> $price";
+  }
+  
+  @override
+  String toString()
+  {
+    return format();
+  }
+}
+
+//for extra properties 
+class Pizza extends MenuItem { 
+  List<String> toppings;
+  Pizza(this.toppings, super.title, super.prize);
+  
+  //method overriding
+  String format(){
+     
+    var formattedToppings = "Contains: ";
+    for(final t in toppings)
+    {
+      
+      formattedToppings = '$formattedToppings $t';
+    }
+    return "$title -> $price \n$formattedToppings";
+  }
+  
+  @override
+  String toString()
+  {
+    return 'Pizza: $title, $price, $toppings';
+  }
+}
+
+class Collection<T> {
+  String name;
+  List<T> data;
+  
+  Collection(this.name, this.data);
+  
+  T randomItem(){
+    
+    data.shuffle(); //shuffle list data randomly
+    
+    return data[0];
+  }
+}
+
+
